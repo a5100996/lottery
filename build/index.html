@@ -6,7 +6,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
-    <title>年会抽奖小程序</title>
+    <title>抽獎小程序</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/wall.css">
     <style type="text/css">
@@ -106,11 +106,6 @@
         .pure-button-hover,
         .pure-button:hover,
         .pure-button:focus {
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=0);
-            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, .05)), to(rgba(0, 0, 0, .1)));
-            background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, .05) 40%, rgba(0, 0, 0, .1));
-            background-image: -moz-linear-gradient(top, rgba(0, 0, 0, .05) 0, rgba(0, 0, 0, .1));
-            background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, .05) 40%, rgba(0, 0, 0, .1));
             background-image: linear-gradient(transparent, rgba(0, 0, 0, .05) 40%, rgba(0, 0, 0, .1));
         }
 
@@ -177,7 +172,7 @@
 <body>
     <div id="main" class="wall">
         <div class="result-btn">
-            <a href="./result.html" target="_blank">获奖名单</a>
+            <a href="./result.html" target="_blank">獲獎名單</a>
         </div>
     </div>
     <div id="result" class="result">
@@ -186,7 +181,7 @@
         <button v-for="value in btns" @click="onClick(value)" class="pure-button"
             :class="{ 'button-error': selected == value}">{{value}}</button>
         <button class="pure-button" @click="toggle" :class="{'button-secondary': !running,
-               'button-success': running}">{{running?'停!':'开始'}}</button>
+               'button-success': running}">{{running?'停!':'開始'}}</button>
         <button class="pure-button button-warning" @click="reset">重置</button>
     </div>
     <script type="text/javascript" src="js/zepto.js"></script>
@@ -247,7 +242,7 @@
             new Vue({
                 el: '#tools',
                 data: {
-                    selected: 30,
+                    selected: 5,
                     running: false,
                     btns: [
                         5, 1
@@ -264,7 +259,7 @@
                 },
                 methods: {
                     reset: function () {
-                        if (confirm('确定要重置么？所有之前的抽奖历史将被清除！')) {
+                        if (confirm('確定要重置嗎？所有之前的抽獎歷史將被清除！')) {
                             localStorage.clear();
                             location.reload(true);
                         }
